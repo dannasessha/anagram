@@ -163,3 +163,97 @@ fn test_same_bytes_different_chars() {
 
     process_anagram_case(word, &inputs, &outputs);
 }
+
+#[test]
+fn case_fold_1() {
+    let word = "ß";
+
+    let inputs = ["ss"]; 
+
+    let outputs = vec![];
+
+    process_anagram_case(word, &inputs, &outputs);
+}
+
+#[test]
+fn case_fold_1b() {
+    let word = "ßepe";
+
+    let inputs = ["ẞeep"]; 
+
+    let outputs = vec!["ẞeep"];
+
+    process_anagram_case(word, &inputs, &outputs);
+}
+#[test]
+fn case_fold_1c() {
+    let word = "ßepe";
+
+    let inputs = ["ẞeep"]; 
+
+    let outputs = vec!["ẞeep"];
+
+    process_anagram_case(word, &inputs, &outputs);
+}
+#[test]
+fn case_fold_2() {
+    let word = "ss";
+
+    let inputs = ["ß"];
+
+    let outputs = vec![];
+
+    process_anagram_case(word, &inputs, &outputs);
+}
+
+#[test]
+fn case_fold_3() {
+    let word = "ᾛemu";
+
+    let inputs = ["ἣιume"];
+
+    let outputs = vec![];
+
+    process_anagram_case(word, &inputs, &outputs);
+}
+
+#[test]
+fn case_fold_4() {
+    let word = "ᾛeum";
+
+    let inputs = ["ᾓemu"];
+
+    let outputs = vec![];
+
+    process_anagram_case(word, &inputs, &outputs);
+}
+
+#[test]
+fn case_fold_5() {
+    let word = "ἣι";
+
+    let inputs = ["ᾓ"];
+
+    let outputs = vec![];
+
+    process_anagram_case(word, &inputs, &outputs);
+}
+
+#[test]
+fn case_fold_6() {
+    let word = "_DİYARBAKIR";
+
+    let inputs = ["diyarbakır_", "Diyar_bakır"];
+
+    let outputs = vec![];
+
+    process_anagram_case(word, &inputs, &outputs);
+}
+#[test]
+fn case_fold_7() {
+    let word = "diyarbakır_";
+    let inputs = ["_DİYARBAKIR","Diyar_bakır"];
+    let outputs = vec![];
+
+    process_anagram_case(word, &inputs, &outputs);
+}
